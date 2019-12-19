@@ -1,0 +1,36 @@
+{
+  "name": "jonassiewertsen/statamic-how-to-addon",
+  "description": "An Addon to save How To's for your customers",
+  "keywords": [
+    "Statamic",
+    "Addon",
+    "How-To", "HowTo", "How", "To",
+    "Videos"
+  ],
+  "license": "proprietary",
+  "type": "statamic-addon",
+  "autoload": {
+    "psr-4": {
+      "Jonassiewertsen\\Statamic\\HowTo\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jonas Siewertsen"
+    }
+  ],
+  "support": {
+    "email": "mail@jonassiewertsen.com"
+  },
+  "extra": {
+    "statamic": {
+      "name": "How To Addon",
+      "description": "An Addon to save How To's for your customers"
+    },
+    "laravel": {
+      "providers": [
+        "Jonassiewertsen\\Statamic\\HowTo\\ServiceProvider"
+      ]
+    }
+  }
+}
