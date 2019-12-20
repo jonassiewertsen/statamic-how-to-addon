@@ -8,34 +8,29 @@ use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
 {
-    protected $scripts = [
-//        __DIR__ . '/../public/js/link-fieldtype.js'
-    // TODO: Clean up if not needed
-    ];
-
     public function boot()
     {
         parent::boot();
 
+        // TODO: Refactor the Collection create method
+        $this->app->booted(function () {
+            if(! Collection::handleExists('how_to_addon_videos')) {
+                Collection::make('how_to_addon_videos')
+                    ->title('Videos')
+                    ->save();
+            }
+        });
+
+        // TODO: Refactor the Navigation rearranging
         Nav::extend(function ($nav) {
             $nav->create('Videos')
                 ->section('How To')
-                ->route('dashboard')
-                ->icon('coin');
-        });
+                ->route('dashboard');
 
-
-        //        Nav::extend(function ($nav) {
-//            $nav->create('Documentation')
-//                ->section('How To')
-//                ->route('dashboard')
-//                ->icon('coin');
-//        });
-
-        $this->app->booted(function() {
-//            $collection = Collection::make('test');
-//            $collection->title('Test');
-//            $collection->save();
+            $nav->create('Manage')
+                ->section('How To')
+                ->route('collections.show',
+                    ['collection' => 'how_to_addon_videos']);
         });
     }
 }
