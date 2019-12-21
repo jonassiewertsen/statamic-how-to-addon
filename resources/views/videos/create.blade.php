@@ -2,10 +2,10 @@
 
 @section('content')
     <publish-form
-            title="My Form"
-            action="#"
-            :blueprint='@json($blueprint)'
-{{--            :meta='@json($meta)'--}}
-{{--            :values='@json($values)'--}}
+        title="Add a new Video"
+        action="#"
+        :blueprint='@json($blueprint)'
+        :meta='@json($meta)'
+        :values='@json($values)'
     ></publish-form>
 @stop

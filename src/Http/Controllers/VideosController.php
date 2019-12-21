@@ -21,12 +21,12 @@ class VideosController {
             'title' => [
                 'type' => 'text',
                 'validate' => 'required',
-                'width' => 50,
+                'width' => 100,
             ],
             'handle' => [
                 'type' => 'text',
                 'validate' => 'required|alpha_dash',
-                'width' => 50,
+                'width' => 100,
             ],
         ]);
 
@@ -36,7 +36,7 @@ class VideosController {
 
         // Add the values to the object. This will let you do things like
         // validation, and processing, which is about to happen.
-//        $fields = $fields->addValues($values);
+//        $fields = $fields->addValues();
 
         // Pre-process the values. This will convert the raw values into values
         // that the corresponding fieldtype vue components will be expecting.
@@ -49,8 +49,8 @@ class VideosController {
 
         return view('howToAddon::videos.create', [
             'blueprint' => $blueprint->toPublishArray(),
-//            'values'    => $fields->values(),
-//            'meta'      => $fields->meta(),
+            'values'    => $fields->values(),
+            'meta'      => $fields->meta(),
         ]);
     }
 }
