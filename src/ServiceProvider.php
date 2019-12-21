@@ -16,6 +16,8 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
 
+        $this->loadViewsFrom(__DIR__.'/../resources/views/', 'howToAddon');
+
         $this->createNavigation();
     }
 
@@ -28,8 +30,7 @@ class ServiceProvider extends AddonServiceProvider
 
             $nav->create('Manage')
                 ->section('How To')
-                ->route('collections.show',
-                    ['collection' => 'how_to_addon_videos']);
+                ->route('howToAddon.create');
         });
     }
 }
