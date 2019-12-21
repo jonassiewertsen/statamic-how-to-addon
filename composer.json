@@ -22,6 +22,11 @@
   "support": {
     "email": "mail@jonassiewertsen.com"
   },
+  "require": {
+    "php": "^7.2",
+    "illuminate/support": "6.*",
+    "statamic/cms": "3.*"
+  },
   "extra": {
     "statamic": {
       "name": "How To Addon",

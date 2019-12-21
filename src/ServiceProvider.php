@@ -8,6 +8,10 @@ use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
 {
+    protected $routes = [
+        'cp' => __DIR__.'/routes/cp.php',
+    ];
+
     public function boot()
     {
         parent::boot();
@@ -25,7 +29,7 @@ class ServiceProvider extends AddonServiceProvider
         Nav::extend(function ($nav) {
             $nav->create('Videos')
                 ->section('How To')
-                ->route('dashboard');
+                ->route('howToAddon.index');
 
             $nav->create('Manage')
                 ->section('How To')
