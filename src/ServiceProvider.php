@@ -16,16 +16,11 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
 
-        // TODO: Refactor the Collection create method
-        $this->app->booted(function () {
-            if(! Collection::handleExists('how_to_addon_videos')) {
-                Collection::make('how_to_addon_videos')
-                    ->title('Videos')
-                    ->save();
-            }
-        });
+        $this->createNavigation();
+    }
 
-        // TODO: Refactor the Navigation rearranging
+    private function createNavigation(): void
+    {
         Nav::extend(function ($nav) {
             $nav->create('Videos')
                 ->section('How To')
