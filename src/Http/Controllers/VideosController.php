@@ -6,7 +6,7 @@ use Statamic\Facades\Blueprint;
 
 class VideosController {
     public function index() {
-        return 'cool';
+        return view('howToAddon::videos.create');
     }
 
     public function create()
