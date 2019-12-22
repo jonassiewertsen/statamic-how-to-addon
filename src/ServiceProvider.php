@@ -17,6 +17,7 @@ class ServiceProvider extends AddonServiceProvider
         parent::boot();
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/', 'howToAddon');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'howToAddon');
 
         $this->autoSetupCollections();
         $this->createNavigation();
@@ -31,18 +32,23 @@ class ServiceProvider extends AddonServiceProvider
 
             $nav->create('Manage')
                 ->section('How To')
-                ->route('collections.show',
-                    ['collection' => 'how_to_addon_videos']);
+                ->route('collections.show', [
+                    'collection' => $this->videoCollectionName()
+                ]);
         });
     }
 
     private function autoSetupCollections(): void {
         $this->app->booted(function () {
-            if(! Collection::handleExists('how_to_addon_videos')) {
-                Collection::make('how_to_addon_videos')
+            if(! Collection::handleExists($this->videoCollectionName())) {
+                Collection::make($this->videoCollectionName())
                     ->title('Videos')
                     ->save();
             }
         });
+    }
+
+    private function videoCollectionName() {
+        return config('howToAddon.collection.videos', 'how_to_addon_videos');
     }
 }
