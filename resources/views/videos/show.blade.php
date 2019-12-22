@@ -8,7 +8,7 @@
     <div class="flex flex-wrap card">
 
         <div class="p-3 -mt-2 w-full">
-            <a href="{{ route('howToAddon.index') }}" class="block mb-1">< Back</a>
+            <a href="/cp/how-to-addon" class="block mb-1">< Back</a>
             <h1 class="mb-2">{{ $video->title }}</h1>
 
             <video class="w-full" controls>
