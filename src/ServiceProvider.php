@@ -28,10 +28,12 @@ class ServiceProvider extends AddonServiceProvider
     {
         Nav::extend(function ($nav) {
             $nav->create('Videos')
+                ->icon('assets')
                 ->section('How To')
                 ->route('howToAddon.index');
 
             $nav->create('Manage')
+                ->icon('settings-slider')
                 ->section('How To')
                 ->route('collections.show', [
                     'collection' => $this->videoCollectionName(),
