@@ -18,6 +18,7 @@ class ServiceProvider extends AddonServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/../resources/views/', 'howToAddon');
 
+        $this->autoSetupCollections();
         $this->createNavigation();
     }
 
@@ -30,7 +31,18 @@ class ServiceProvider extends AddonServiceProvider
 
             $nav->create('Manage')
                 ->section('How To')
-                ->route('howToAddon.create');
+                ->route('collections.show',
+                    ['collection' => 'how_to_addon_videos']);
+        });
+    }
+
+    private function autoSetupCollections(): void {
+        $this->app->booted(function () {
+            if(! Collection::handleExists('how_to_addon_videos')) {
+                Collection::make('how_to_addon_videos')
+                    ->title('Videos')
+                    ->save();
+            }
         });
     }
 }
