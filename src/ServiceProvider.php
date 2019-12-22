@@ -42,12 +42,13 @@ class ServiceProvider extends AddonServiceProvider
     private function autoSetupCollections(): void
     {
         $this->app->booted(function () {
-            if ( ! Collection::handleExists($this->videoCollectionName())) {
+//            if ( ! Collection::handleExists($this->videoCollectionName())) {
 
                 // Creating Collections
                 Collection::make($this->videoCollectionName())
                     ->entryBlueprints(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
                     ->title('Videos')
+                    ->route('/cp/how-to-addon/video/{slug}')
                     ->save();
 
                 // Creating Blueprint
@@ -78,7 +79,7 @@ class ServiceProvider extends AddonServiceProvider
                             ],
                         ]
                     ])->save();
-            }
+//            }
         });
     }
 
