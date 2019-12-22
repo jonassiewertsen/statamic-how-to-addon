@@ -2,11 +2,16 @@
 
 namespace Jonassiewertsen\Statamic\HowTo\Http\Controllers;
 
+
 use Statamic\Facades\Blueprint;
+use Statamic\Facades\Collection;
+use Statamic\Facades\Entry;
 
 class VideosController {
     public function index() {
-        return view('howToAddon::videos.create');
+        $videos = Entry::whereCollection('how_to_addon_videos');
+
+        return view('howToAddon::videos.index', compact('videos'));
     }
 
     public function create()

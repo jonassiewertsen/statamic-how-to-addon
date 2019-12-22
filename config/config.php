@@ -15,6 +15,10 @@ return [
 
     'collection' => [
         'videos' => 'how_to_addon_videos',
+    ],
+
+    'blueprint' => [
+        'videos' => 'how_to_addon_videos',
     ]
 
 ];
