@@ -48,7 +48,6 @@ class ServiceProvider extends AddonServiceProvider
                 Collection::make($this->videoCollectionName())
                     ->entryBlueprints(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
                     ->title('Videos')
-                    ->route('/cp/how-to-addon/video/{slug}')
                     ->save();
 
                 // Creating Blueprint
