@@ -7,7 +7,7 @@
     "How-To", "HowTo", "How", "To",
     "Videos"
   ],
-  "license": "MIT",
+  "license": "proprietary",
   "type": "statamic-addon",
   "autoload": {
     "psr-4": {
