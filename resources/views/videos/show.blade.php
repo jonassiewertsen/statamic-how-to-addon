@@ -16,7 +16,9 @@
                 Your browser does not support the video tag.
             </video>
 
-            <p class="mt-2">{{ $video->description }}</p>
+            @if ($video->description)
+                <p class="mt-2 text-grey-90">{{ $video->description }}</p>
+            @endif
         </div>
 
     </div>

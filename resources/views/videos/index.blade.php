@@ -26,7 +26,9 @@
                     <h3 class="text-blue text-md font-bold">
                         {{ $video->title }}
                     </h3>
-                    <p>{{ $video->description }}</p>
+                    @if ($video->description)
+                        <p>{{ $video->description }}</p>
+                    @endif
                 </div>
             </a>
         @endforeach
