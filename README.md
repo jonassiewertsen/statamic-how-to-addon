@@ -1,17 +1,18 @@
 # Statamic How To Addon
 
-Would like to use less time to explain how your specific Statamic site has been build? This is your Addon then!
+Would you like to use less time to explain how your specific Statamic site has been build? This is your Addon then!
 
-## How it works?
+## How does it work?
 
-First of all you need to make screen recordings, on how your site works. This part only needs to be done once by yourself. I cant help your there.
+First of all, you need to make screen recordings, on how your site works. This part only needs to be done once by 
+yourself. I can't help you there.
 
-Upload your videos, give them a name and maybe a short description if you want. The addon will display the all videos
-nicely and your clients can watch those videos over and over again, by just logging into the page. 
+Upload your videos, give them a name and maybe a short description if you want. The addon will display all videos nicely 
+and your clients can watch those videos over and over again, by just logging onto the control panel. 
 
-Your videos will be hosted by the client himself and he cant loose a link to them or similar. How great is that?
+Your videos will be hosted by the client himself and he cant lose a link to them or anything similar. How great is that?
 
-English and German translation is already provided, but you can easily add your own translations to the addon. 
+English and German translation is already provided, but you can easily add your own translation to the addon. 
 
 ## How does it look
 
@@ -21,7 +22,7 @@ English and German translation is already provided, but you can easily add your 
 
 ## Installation 
 
-This Fieldtype works with **Statamic 3** only!
+This addon works with **Statamic 3** only!
 
 Install it via the composer command
 ```
@@ -43,7 +44,7 @@ That's it. Enjoy!
 
 ## Customisation
 
-To get you going as fast as possible, we did setup everything for you. Not a fan of it? Just change it.
+To get you going as fast as possible, we did set up everything for you. Not a fan of it? Just change it.
 
 ### Language / Translation
 
