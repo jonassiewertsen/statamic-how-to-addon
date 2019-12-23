@@ -2,8 +2,7 @@
 
 namespace Jonassiewertsen\Statamic\HowTo;
 
-use Statamic\Fields\Blueprint;
-use Statamic\Facades\Collection;
+use Jonassiewertsen\Statamic\HowTo\Commands\Setup;
 use Statamic\Facades\Nav;
 use Statamic\Providers\AddonServiceProvider;
 
@@ -26,12 +25,17 @@ class ServiceProvider extends AddonServiceProvider
         // Translations
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'howToAddon');
 
+        // Commands
+        $this->loadCommands([
+            Setup::class,
+        ]);
+
+        // Translation
         $this->publishes([
             __DIR__ . '/../resources/lang' => resource_path('lang/vendor/courier'),
         ]);
 
         // More stuff
-        $this->autoSetupCollections();
         $this->createNavigation();
     }
 
@@ -52,47 +56,10 @@ class ServiceProvider extends AddonServiceProvider
         });
     }
 
-    private function autoSetupCollections(): void
-    {
-        $this->app->booted(function () {
-//            if ( ! Collection::handleExists($this->videoCollectionName())) {
-
-                // Creating Collections
-                Collection::make($this->videoCollectionName())
-                    ->entryBlueprints(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
-                    ->title('Videos')
-                    ->save();
-
-                // Creating Blueprint
-                (new Blueprint)
-                    ->setHandle(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
-                    ->setContents([
-                        'title' => 'Video',
-                        'sections' => [
-                            'main'    => [
-                                'fields' => [
-                                    ['handle' => 'video', 'field' => [
-                                        'type' => 'assets',
-                                        'allow_upload' => true,
-                                        'max_files' => 1,
-                                        'validate' => 'required'
-                                    ]],
-                                    ['handle' => 'description', 'field' => [
-                                        'character_limit' => 133,
-                                        'type' => 'text',
-                                        'display' => 'description'
-                                    ]]
-                                ],
-                            ],
-                            'sidebar' => [
-                                'fields' => [
-                                    ['handle' => 'slug', 'field' => ['type' => 'slug']],
-                                ],
-                            ],
-                        ]
-                    ])->save();
-//            }
-        });
+    private function loadCommands(array $commands) {
+        if ($this->app->runningInConsole()) {
+            $this->commands($commands);
+        }
     }
 
     private function videoCollectionName()
