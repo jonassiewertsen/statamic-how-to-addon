@@ -67,7 +67,7 @@ class ServiceProvider extends AddonServiceProvider
                                         'validate' => 'required'
                                     ]],
                                     ['handle' => 'description', 'field' => [
-                                        'character_limit' => 150,
+                                        'character_limit' => 133,
                                         'type' => 'text',
                                         'display' => 'description'
                                     ]]
