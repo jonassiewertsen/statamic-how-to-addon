@@ -84,7 +84,9 @@ php artisan vendor:publish
 You can change the names in the config file, which have been copied into your config directory.
 
 ## License
-This Statamic How To Addon is licensed under the MIT license.
+This Statamic How To Addon is licensed under the proprietary license. For use this addon in production, you need 
+to buy a license:
+[Statamic Marketplace](https://statamic.com/seller/products/how-to-addon/variants/219/preview)
 
 ### Photo used on Statamic Marketplace
 The Photo has been taken by Jan-Christoph Elle Siewertsen. It is NOT allowed to use this photo without license. 
