@@ -74,3 +74,7 @@ You can change the names in the config file, which have been copied into your co
 
 ## License
 This Statamic How To Addon is licensed under the MIT license.
+
+### Photo used on Statamic Marketplace
+The Photo has been taken by Jan-Christoph Elle Siewertsen. It is NOT allowed to use this photo without license. 
+[Jan-Christoph Elle Siewertsen](http://janchristophelle.com/)
