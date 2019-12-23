@@ -24,10 +24,14 @@ English and German translation is already provided, but you can easily add your 
 
 This addon works with **Statamic 3** only!
 
+### Step 1
+
 Install it via the composer command
 ```
 composer require jonassiewertsen/statamic-how-to-addon
 ```
+
+### Step 2
 
 To setup up a Collection and Blueprints, fire the setup command.
 If you do want to use your own collection and blueprint names, change those in the config file first :-)
@@ -35,6 +39,13 @@ If you do want to use your own collection and blueprint names, change those in t
 ```
 php artisan howToAddon:setup
 ```
+
+### Step 3
+Permissions need to be set, to upload or change videos. 
+- Super Users can do this by default
+- If not a super user, remember to give permissions to the Videos Collection
+
+Every logged in User can see and watch How To videos. You cant change that.
 
 That's it. Enjoy!
 
