@@ -17,9 +17,20 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
 
+        // Views
         $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'howToAddon');
+
+        // Config
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'howToAddon');
 
+        // Translations
+        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'howToAddon');
+
+        $this->publishes([
+            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/courier'),
+        ]);
+
+        // More stuff
         $this->autoSetupCollections();
         $this->createNavigation();
     }
@@ -27,12 +38,12 @@ class ServiceProvider extends AddonServiceProvider
     private function createNavigation(): void
     {
         Nav::extend(function ($nav) {
-            $nav->create('Videos')
+            $nav->create(__('howToAddon::menu.videos'))
                 ->icon('assets')
                 ->section('How To')
                 ->route('howToAddon.index');
 
-            $nav->create('Manage')
+            $nav->create(__('howToAddon::menu.manage'))
                 ->icon('settings-slider')
                 ->section('How To')
                 ->route('collections.show', [

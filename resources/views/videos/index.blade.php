@@ -8,8 +8,8 @@
     <div class="flex flex-wrap card">
 
         <div class="p-3 -mt-1 w-full">
-            <h1>Videos</h1>
-            <p>Check out our videos, to get you started as good as possible.</p>
+            <h1>{{ __('howToAddon::videos.title') }}</h1>
+            <p>{{ __('howToAddon::videos.intro') }}</p>
         </div>
 
         @foreach ($videos as $video)
