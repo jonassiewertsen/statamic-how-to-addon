@@ -46,7 +46,7 @@ class Setup extends Command
     }
 
     private function createCollections() {
-        Collection::make($this->videoCollectionName())
+        Collection::make(config('howToAddon.collection.videos', 'how_to_addon_videos'))
             ->entryBlueprints(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
             ->title('Videos')
             ->save();
