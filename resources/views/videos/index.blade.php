@@ -9,11 +9,11 @@
 
         <div class="p-3 -mt-1 w-full">
             <h1>{{ __('howToAddon::videos.title') }}</h1>
-            <p>{{ __('howToAddon::videos.intro') }}</p>
+            <p class="text-grey-80">{{ __('howToAddon::videos.intro') }}</p>
         </div>
 
         @foreach ($videos as $video)
-            <a href="/cp/how-to-addon/video/{{ $video->slug() }}" class="w-full lg:w-1/2 p-3 border-t md:flex items-center hover:bg-grey-10">
+            <a href="/cp/how-to-addon/video/{{ $video->slug() }}" class="w-full lg:w-1/2 p-3 border-b md:flex hover:bg-grey-10">
                 <div class="h-8 w-8 mr-2 hidden md:block text-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M4.435.913l8.936 3.573a1 1 0 0 1 .629.928v16.848a1 1 0 0 1-1.371.927l-8-3.2A1 1 0 0 1 4 19.062V1.739a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1h-2"
