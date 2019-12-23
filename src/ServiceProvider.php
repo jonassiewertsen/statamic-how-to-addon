@@ -2,7 +2,9 @@
 
 namespace Jonassiewertsen\Statamic\HowTo;
 
+use Illuminate\Support\Facades\Gate;
 use Jonassiewertsen\Statamic\HowTo\Commands\Setup;
+use Statamic\Facades\Collection;
 use Statamic\Facades\Nav;
 use Statamic\Providers\AddonServiceProvider;
 
@@ -51,12 +53,15 @@ class ServiceProvider extends AddonServiceProvider
                 ->section('How To')
                 ->route('howToAddon.index');
 
-            $nav->create(__('howToAddon::menu.manage'))
-                ->icon('settings-slider')
-                ->section('How To')
-                ->route('collections.show', [
-                    'collection' => $this->videoCollectionName(),
-                ]);
+            // Only show the Manage button, if the permissions have been set
+            if (Gate::allows('edit', Collection::findByHandle(config('howToAddon.collection.videos', 'how_to_addon_videos')))) {
+                $nav->create(__('howToAddon::menu.manage'))
+                    ->icon('settings-slider')
+                    ->section('How To')
+                    ->route('collections.show', [
+                        'collection' => $this->videoCollectionName(),
+                    ]);
+            }
         });
     }
 
