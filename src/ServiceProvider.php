@@ -22,6 +22,10 @@ class ServiceProvider extends AddonServiceProvider
         // Config
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'howToAddon');
 
+        $this->publishes([
+            __DIR__ . '/../config/config.php' => config_path('how_to_addon.php'),
+        ]);
+
         // Translations
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'howToAddon');
 
@@ -32,7 +36,7 @@ class ServiceProvider extends AddonServiceProvider
 
         // Translation
         $this->publishes([
-            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/courier'),
+            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
         ]);
 
         // More stuff
