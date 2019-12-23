@@ -1,6 +1,6 @@
 # Statamic How To Addon
 
-Would you like to use less time to explain how your specific Statamic site has been build? This is your Addon then!
+Would you like to use less time to explain how your specific Statamic site has been build? This is your Statamic Addon then!
 
 ## How does it work?
 
