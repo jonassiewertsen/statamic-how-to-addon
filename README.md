@@ -73,6 +73,15 @@ Provider: Jonassiewertsen\Statamic\HowTo\ServiceProvider
 All the translation files have been added into your resources/lang/vendor/jonassiewertsen/howToAddon/
 Change the files or add your own language.
 
+### Footer created by reference
+
+If you want, you can easily disable the reference in the config file. Publish the file and set
+the value to false.
+
+```php
+php artisan vendor:publish
+```
+
 ### Collection and Blueprint names
 
 You can choose other names. Just publish the vendor files

@@ -1,5 +1,12 @@
 # Release Notes
 
+## v1.0.3
+
+### Changed
+- The footer reference can be hidden now.
+- In case there are no videos uploaded, a beautiful svg will be shown
+- The files to publish have been tagged for a better overview on the vendor:publish command
+
 ## v1.0.2
 
 ### Changed
