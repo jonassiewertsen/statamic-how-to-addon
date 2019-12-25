@@ -26,14 +26,14 @@ class ServiceProvider extends AddonServiceProvider
 
         $this->publishes([
             __DIR__ . '/../config/config.php' => config_path('how_to_addon.php'),
-        ], 'config');
+        ], 'How To Addon config file');
 
         // Translations
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'howToAddon');
 
         $this->publishes([
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
-        ], 'lang');
+        ], 'How To Addon lang file');
 
         // Commands
         $this->loadCommands([
