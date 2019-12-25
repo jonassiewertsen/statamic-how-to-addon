@@ -18,29 +18,24 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
 
-        // Views
         $this->loadViewsFrom(__DIR__ . '/../resources/views/', 'howToAddon');
-
-        // Config
         $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'howToAddon');
-
-        $this->publishes([
-            __DIR__ . '/../config/config.php' => config_path('how_to_addon.php'),
-        ], 'How To Addon config file');
-
-        // Translations
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'howToAddon');
 
-        $this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
-        ], 'How To Addon lang file');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
+            ], 'How To Addon lang file');
 
-        // Commands
+            $this->publishes([
+                __DIR__ . '/../config/config.php' => config_path('how_to_addon.php'),
+            ], 'How To Addon config file');
+        }
+
         $this->loadCommands([
             Setup::class,
         ]);
 
-        // Navigation
         $this->createNavigation();
     }
 
