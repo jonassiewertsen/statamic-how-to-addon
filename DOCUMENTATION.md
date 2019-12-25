@@ -14,7 +14,7 @@ English and German translation is already provided, but you can easily add your 
 
 This addon works with **Statamic 3** only!
 
-# Step 1
+## Step 1
 
 Install it via the composer command
 ```
@@ -87,6 +87,6 @@ This Statamic How To Addon is licensed under the proprietary license. For use th
 to buy a license:
 [Statamic Marketplace](https://statamic.com/seller/products/how-to-addon/variants/219/preview)
 
-## Photo used on Statamic Marketplace
+# Photo used on Statamic Marketplace
 The Photo has been taken by Jan-Christoph Elle Siewertsen. It is NOT allowed to use this photo without license. 
 [Jan-Christoph Elle Siewertsen](http://janchristophelle.com/)
