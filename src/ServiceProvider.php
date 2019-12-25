@@ -26,22 +26,21 @@ class ServiceProvider extends AddonServiceProvider
 
         $this->publishes([
             __DIR__ . '/../config/config.php' => config_path('how_to_addon.php'),
-        ]);
+        ], 'config');
 
         // Translations
         $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'howToAddon');
+
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
+        ], 'lang');
 
         // Commands
         $this->loadCommands([
             Setup::class,
         ]);
 
-        // Translation
-        $this->publishes([
-            __DIR__ . '/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
-        ]);
-
-        // More stuff
+        // Navigation
         $this->createNavigation();
     }
 
