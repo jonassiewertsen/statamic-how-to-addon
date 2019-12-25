@@ -1,5 +1,10 @@
 # Release Notes
 
+## v1.0.4
+
+### Changed
+- The README.md has been shortened and been mostly replaced by the DOCUMENTATION.md
+
 ## v1.0.3
 
 ### Changed
