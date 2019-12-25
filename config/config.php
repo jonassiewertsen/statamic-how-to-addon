@@ -4,12 +4,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Collection names
+    | Handle names
     |--------------------------------------------------------------------------
     |
-    | This option controls the default authentication "guard" and password
-    | reset options for your application. You may change these defaults
-    | as required, but they're a perfect start for most applications.
+    | You can change those, in case they collide with other handles in your
+    | collections or blueprints. Remember: The handle names are not the
+    | shown names in for example the Menu.
     |
     */
 
@@ -19,6 +19,18 @@ return [
 
     'blueprint' => [
         'videos' => 'how_to_addon_videos',
-    ]
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Show created by in addon footer
+    |--------------------------------------------------------------------------
+    |
+    | You can choose, if you want to show the "Addon created by" reference in
+    | the footer. If you don't want to show it, set it to false.
+    |
+    */
+
+    'show_created_by' => true,
 
 ];
