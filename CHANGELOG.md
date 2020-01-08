@@ -1,5 +1,10 @@
 # Release Notes
 
+## v1.0.5
+
+### Fixed
+- The cp route can be changed, without breaking the view of the videos
+
 ## v1.0.4
 
 ### Changed
