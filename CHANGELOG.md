@@ -1,4 +1,14 @@
 # Release Notes
+## v1.1.0
+
+### Added
+- A widget has been created to show your screencasts on your dashboard
+- License informatino have been added to the readme
+
+### Changed
+- The creator has been removed from the addon plugin
+- Readme.md typos
+- Small service provider refactor
 
 ## v1.0.5
 
