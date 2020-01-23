@@ -14,6 +14,10 @@ class ServiceProvider extends AddonServiceProvider
         'cp' => __DIR__ . '/routes/cp.php',
     ];
 
+    protected $widgets = [
+        \Jonassiewertsen\Statamic\HowTo\Widgets\HowToVideos::class,
+    ];
+
     public function boot()
     {
         parent::boot();
