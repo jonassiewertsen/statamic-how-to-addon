@@ -14,6 +14,10 @@ class ServiceProvider extends AddonServiceProvider
         'cp' => __DIR__ . '/routes/cp.php',
     ];
 
+    protected $commands = [
+        Setup::class,
+    ];
+
     protected $widgets = [
         \Jonassiewertsen\Statamic\HowTo\Widgets\HowToVideos::class,
     ];
@@ -35,10 +39,6 @@ class ServiceProvider extends AddonServiceProvider
                 __DIR__ . '/../config/config.php' => config_path('how_to_addon.php'),
             ], 'How To Addon config file');
         }
-
-        $this->loadCommands([
-            Setup::class,
-        ]);
 
         $this->createNavigation();
     }
