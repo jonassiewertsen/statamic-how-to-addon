@@ -25,7 +25,7 @@
   "require": {
     "php": "^7.2",
     "illuminate/support": "6.*",
-    "statamic/cms": "3.*"
+    "statamic/cms": "3.*@beta"
   },
   "extra": {
     "statamic": {
