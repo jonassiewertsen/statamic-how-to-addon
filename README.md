@@ -19,6 +19,9 @@ English and German translation is already provided, but you can easily add your 
 
 <img src="https://github.com/jonassiewertsen/statamic-how-to-addon/blob/master/HowToAddon-show.png?raw=true" alt="How To Addon Single Video">
 
+### License
+This Addon is paid and commerical software. A license from the Statamic Marketplace is needed in order to use it in production.
+
 ### Photo used on Statamic Marketplace
 The Photo has been taken by Jan-Christoph Elle Siewertsen. It is NOT allowed to use this photo without license. 
 [Jan-Christoph Elle Siewertsen](http://janchristophelle.com/)
