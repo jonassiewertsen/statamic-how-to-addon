@@ -2,7 +2,7 @@
 
 Would you like to use less time to explain how your specific Statamic site has been built? "How To" is your Statamic Addon then!
 
-NEW: You can now add a widget of your videos to the dasboard.
+NEW: You can add a widget of your screencasts to the dasboard.
 
 ## How does it work?
 
