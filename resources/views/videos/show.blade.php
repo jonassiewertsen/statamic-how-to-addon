@@ -23,5 +23,4 @@
 
     </div>
 
-    @include('howToAddon::partials.footer')
 @stop

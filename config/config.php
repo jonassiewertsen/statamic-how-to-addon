@@ -21,16 +21,4 @@ return [
         'videos' => 'how_to_addon_videos',
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Show created by in addon footer
-    |--------------------------------------------------------------------------
-    |
-    | You can choose, if you want to show the "Addon created by" reference in
-    | the footer. If you don't want to show it, set it to false.
-    |
-    */
-
-    'show_created_by' => true,
-
 ];
