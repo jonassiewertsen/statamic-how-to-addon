@@ -9,6 +9,8 @@ class VideosController {
     public function index() {
         $videos = Entry::whereCollection('how_to_addon_videos');
 
+        $videos = $this->sortByTitle($videos);
+
         return view('howToAddon::videos.index', compact('videos'));
     }
 
@@ -20,5 +22,9 @@ class VideosController {
         $url = '/assets/' . $video->video;
 
         return view('howToAddon::videos.show', compact('video', 'url'));
+    }
+
+    private function sortByTitle($videos) {
+        return collect($videos)->sortBy('title');
     }
 }
