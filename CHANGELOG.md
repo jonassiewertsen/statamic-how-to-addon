@@ -1,4 +1,9 @@
 # Release Notes
+## v1.1.1
+
+### Fixed
+- The Videos will be sorted after title
+
 ## v1.1.0
 
 ### Added
