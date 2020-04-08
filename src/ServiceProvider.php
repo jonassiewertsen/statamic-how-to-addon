@@ -5,7 +5,7 @@ namespace Jonassiewertsen\Statamic\HowTo;
 use Illuminate\Support\Facades\Gate;
 use Jonassiewertsen\Statamic\HowTo\Commands\Setup;
 use Statamic\Facades\Collection;
-use Statamic\Facades\Nav;
+use Statamic\Facades\CP\Nav;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
