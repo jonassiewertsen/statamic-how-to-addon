@@ -42,7 +42,7 @@ class Setup extends Command
         $this->createCollections();
         $this->createBlueprints();
 
-        $this->info('Everything as been setup for you. Cheers!');
+        $this->info('Everything has been setup for you. Cheers!');
     }
 
     private function createCollections() {
