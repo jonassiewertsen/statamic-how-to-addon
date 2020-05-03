@@ -6,3 +6,4 @@ Route::get('/how-to/video/{video}', 'VideosController@show')->name('howToAddon.v
 
 /** Documentation */
 Route::get('/how-to/documentation/{slug}', 'DocumentationController@show')->name('howToAddon.documentation.show');
+Route::get('/how-to/documentation/{parent}/{slug}', 'DocumentationController@showChild')->name('howToAddon.documentation.child.show');
