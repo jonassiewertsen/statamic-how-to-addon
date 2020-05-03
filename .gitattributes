@@ -1,2 +1,11 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Ignore all test and documentation
+/.gitattributes         export-ignore
+/.gitignore             export-ignore
+/.scrutinizer.yml       export-ignore
+/.editorconfig          export-ignore
+/.github                export-ignore
+HowToAddon-index.png    export-ignore
+HowToAddon-show.png     export-ignore
