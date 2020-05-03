@@ -5,10 +5,9 @@ namespace Jonassiewertsen\Statamic\HowTo;
 use Illuminate\Support\Facades\Gate;
 use Jonassiewertsen\Statamic\HowTo\Commands\Setup;
 use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
+use Jonassiewertsen\Statamic\HowTo\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Facades\CP\Nav;
-use Statamic\Facades\Entry;
-use Statamic\Facades\Site;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
@@ -35,7 +34,7 @@ class ServiceProvider extends AddonServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
+                __DIR__ . '/../resources/lang' => resource_path('lang/vendor/jonassiewertsen/howToAddon/'),
             ], 'How To Addon lang file');
 
             $this->publishes([
@@ -48,8 +47,6 @@ class ServiceProvider extends AddonServiceProvider
 
     private function createNavigation(): void
     {
-        // TODO: What about, if there are no entrys or no children?
-
         Nav::extend(function ($nav) {
             $nav->create(__('howToAddon::menu.videos'))
                 ->icon('assets')
@@ -57,12 +54,12 @@ class ServiceProvider extends AddonServiceProvider
                 ->route('howToAddon.index');
 
             // Only show the Manage button, if the permissions have been set
-            if (Gate::allows('edit', Collection::findByHandle($this->videoCollectionName()))) {
+            if (Gate::allows('edit', Collection::findByHandle(Video::collectionName()))) {
                 $nav->create(__('howToAddon::menu.manage'))
                     ->icon('settings-slider')
                     ->section('How To')
                     ->route('collections.show', [
-                        'collection' => $this->videoCollectionName(),
+                        'collection' => Video::collectionName(),
                     ]);
             }
         });
@@ -71,9 +68,9 @@ class ServiceProvider extends AddonServiceProvider
 
             Documentation::tree()->map(function ($tree) use ($nav) {
                 return $nav->create(Documentation::entryTitle($tree['entry']))
-                            ->icon('drawer-file')
-                            ->section('Documentation')
-                            ->children(Documentation::entryChildren($tree, $nav));
+                           ->icon('drawer-file')
+                           ->section('Documentation')
+                           ->children(Documentation::entryChildren($tree, $nav));
             });
 
             // Only show the Manage button, if the permissions have been set
@@ -88,14 +85,10 @@ class ServiceProvider extends AddonServiceProvider
         });
     }
 
-    private function loadCommands(array $commands) {
+    private function loadCommands(array $commands)
+    {
         if ($this->app->runningInConsole()) {
             $this->commands($commands);
         }
-    }
-
-    private function videoCollectionName()
-    {
-        return config('howToAddon.collection.videos', 'how_to_addon_videos');
     }
 }
