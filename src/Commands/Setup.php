@@ -3,6 +3,8 @@
 namespace Jonassiewertsen\Statamic\HowTo\Commands;
 
 use Illuminate\Console\Command;
+use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
+use Jonassiewertsen\Statamic\HowTo\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Fields\Blueprint;
 
@@ -46,13 +48,13 @@ class Setup extends Command
     }
 
     private function createCollections() {
-        Collection::make(config('howToAddon.collection.videos', 'how_to_addon_videos'))
-            ->entryBlueprints(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
+        Collection::make(Video::collectionName())
+            ->entryBlueprints(Video::collectionName())
             ->title('How to videos')
             ->save();
 
-        Collection::make(config('howToAddon.collection.documentation', 'how_to_addon_documentation'))
-            ->entryBlueprints(config('howToAddon.blueprint.documentation', 'how_to_addon_documentation'))
+        Collection::make(Documentation::collectionName())
+            ->entryBlueprints(Documentation::collectionName())
             ->title('How to documentation')
             ->save();
     }
@@ -60,7 +62,7 @@ class Setup extends Command
     protected function createBlueprints()
     {
         (new Blueprint)
-            ->setHandle(config('howToAddon.blueprint.videos', 'how_to_addon_videos'))
+            ->setHandle(Video::collectionName())
             ->setContents([
                 'title' => 'How to Video',
                 'sections' => [
@@ -94,7 +96,7 @@ class Setup extends Command
             ])->save();
 
         (new Blueprint)
-            ->setHandle(config('howToAddon.blueprint.documentation', 'how_to_addon_documentation'))
+            ->setHandle(Documentation::collectionName())
             ->setContents([
                 'title' => 'How to documentation',
                 'sections' => [
