@@ -30,7 +30,8 @@ class Documentation
         }
 
         return collect($tree['children'])->map(function ($child) use ($nav) {
-            return $nav->item(self::entryTitle($child['entry']));
+            return $nav->item(self::entryTitle($child['entry']))
+                       ->route('howToAddon.documentation.show', Documentation::entrySlug($child['entry']));
         });
     }
 
@@ -39,7 +40,15 @@ class Documentation
      */
     public static function entryTitle($entry): string
     {
-        return Entry::find($entry)->data()['title'];
+        return Entry::find($entry)->title;
+    }
+
+    /**
+     * Return the slug
+     */
+    public static function entrySlug($entry): string
+    {
+        return Entry::find($entry)->slug();
     }
 
     /**

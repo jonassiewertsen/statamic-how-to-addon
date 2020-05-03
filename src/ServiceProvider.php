@@ -68,6 +68,7 @@ class ServiceProvider extends AddonServiceProvider
 
             Documentation::tree()->map(function ($tree) use ($nav) {
                 return $nav->create(Documentation::entryTitle($tree['entry']))
+                           ->route('howToAddon.documentation.show', Documentation::entrySlug($tree['entry']))
                            ->icon('drawer-file')
                            ->section('Documentation')
                            ->children(Documentation::entryChildren($tree, $nav));
