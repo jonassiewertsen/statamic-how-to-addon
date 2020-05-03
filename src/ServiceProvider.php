@@ -51,7 +51,7 @@ class ServiceProvider extends AddonServiceProvider
             $nav->create(__('howToAddon::menu.videos'))
                 ->icon('assets')
                 ->section('How To')
-                ->route('howToAddon.index');
+                ->route('howToAddon.videos.index');
 
             // Only show the Manage button, if the permissions have been set
             if (Gate::allows('edit', Collection::findByHandle(Video::collectionName()))) {
