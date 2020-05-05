@@ -7,6 +7,7 @@ use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
 use Jonassiewertsen\Statamic\HowTo\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Fields\Blueprint;
+use Statamic\Structures\CollectionStructure;
 
 class Setup extends Command
 {
@@ -56,6 +57,7 @@ class Setup extends Command
         Collection::make(Documentation::collectionName())
             ->entryBlueprints(Documentation::collectionName())
             ->title('How to documentation')
+            ->structure((new CollectionStructure)->maxDepth(2))
             ->save();
     }
 
