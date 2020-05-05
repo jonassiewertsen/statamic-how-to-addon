@@ -114,6 +114,7 @@ class Setup extends Command
                                 'localizable'           => false,
                                 'listable'              => 'hidden',
                                 'display'               => 'Content',
+                                'validate'              => 'required',
                             ]]
                         ]
                     ],
