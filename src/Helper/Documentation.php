@@ -39,6 +39,14 @@ class Documentation
     }
 
     /**
+     * Fetch the belonging children for the navigation
+     */
+    public static function exists(): bool
+    {
+        return Collection::handleExists(self::collectionName());
+    }
+
+    /**
      * Return the entry title
      */
     public static function entryTitle($entry): string

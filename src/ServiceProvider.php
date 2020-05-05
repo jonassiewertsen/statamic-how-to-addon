@@ -66,13 +66,15 @@ class ServiceProvider extends AddonServiceProvider
 
         Nav::extend(function ($nav) {
 
-            Documentation::tree()->map(function ($tree) use ($nav) {
-                return $nav->create(Documentation::entryTitle($tree['entry']))
-                           ->route('howToAddon.documentation.show', Documentation::entrySlug($tree['entry']))
-                           ->icon('drawer-file')
-                           ->section('Documentation')
-                           ->children(Documentation::entryChildren($tree, $nav));
-            });
+            if (Documentation::exists()) {
+                Documentation::tree()->map(function ($tree) use ($nav) {
+                    return $nav->create(Documentation::entryTitle($tree['entry']))
+                               ->route('howToAddon.documentation.show', Documentation::entrySlug($tree['entry']))
+                               ->icon('drawer-file')
+                               ->section('Documentation')
+                               ->children(Documentation::entryChildren($tree, $nav));
+                });
+            }
 
             // Only show the Manage button, if the permissions have been set
             if (Gate::allows('edit', Collection::findByHandle(Documentation::collectionName()))) {

@@ -2,11 +2,11 @@
 
 namespace Jonassiewertsen\Statamic\HowTo\Http\Controllers;
 
-use Statamic\Facades\Asset;
 use Statamic\Facades\Entry;
 
 class VideosController {
-    public function index() {
+    public function index()
+    {
         $videos = Entry::whereCollection('how_to_addon_videos');
 
         $videos = $this->sortByTitle($videos);
@@ -14,7 +14,8 @@ class VideosController {
         return view('howToAddon::videos.index', compact('videos'));
     }
 
-    public function show($slug) {
+    public function show($slug)
+    {
         $video = Entry::findBySlug($slug, config('howToAddon.blueprint.videos', 'how_to_addon_videos'));
 
         // TODO: Should be replaced by Asset::findByPath later.
@@ -24,7 +25,8 @@ class VideosController {
         return view('howToAddon::videos.show', compact('video', 'url'));
     }
 
-    private function sortByTitle($videos) {
+    private function sortByTitle($videos)
+    {
         return collect($videos)->sortBy('title');
     }
 }
