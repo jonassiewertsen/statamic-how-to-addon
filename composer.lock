@@ -5623,6 +5623,7 @@
                 "commonmark",
                 "markdown"
             ],
+            "abandoned": "league/commonmark",
             "time": "2019-09-11T21:27:00+00:00"
         },
         {
