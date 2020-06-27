@@ -19,6 +19,15 @@ English and German translation is already provided, but you can easily add your 
 
 <img src="https://github.com/jonassiewertsen/statamic-how-to-addon/blob/master/HowToAddon-show.png?raw=true" alt="How To Addon Single Video">
 
+# Looking for more?
+Would you like something more flexible and with more functionality? Check out my Documentation plugin:
+[Documentation Plugin](https://statamic.com/marketplace/addons/documentation)
+
+# Requirements
+- Statamic V3
+- Laravel 7
+- min. PHP 7.2
+
 ### License
 This Addon is paid and commerical software. A license from the Statamic Marketplace is needed in order to use it in production.
 
