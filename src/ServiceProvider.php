@@ -47,7 +47,7 @@ class ServiceProvider extends AddonServiceProvider
     private function createNavigation(): void
     {
         Nav::extend(function ($nav) {
-            $nav->create(__('howToAddon::general.videos'))
+            $nav->create(__('howToAddon::general.title'))
                 ->icon('assets')
                 ->section('How To')
                 ->route('howToAddon.index');
