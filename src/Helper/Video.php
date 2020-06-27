@@ -9,6 +9,6 @@ class Video
      */
     public static function collectionName(): string
     {
-        return config('howToAddon.collection.videos', 'how_to_addon_videso');
+        return config('howToAddon.collection', 'how_to_addon_videos');
     }
 }

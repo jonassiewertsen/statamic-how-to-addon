@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'collection' => 'how_to_addon_documentation',
-    'blueprint'  => 'how_to_addon_documentation',
+    'collection' => 'how_to_addon_videos',
+    'blueprint'  => 'how_to_addon_videos',
 
 ];
