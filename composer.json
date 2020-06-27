@@ -1,8 +1,9 @@
 {
   "name": "jonassiewertsen/statamic-how-to-addon",
-  "description": "A Statamic Addon to save How To's for your customers",
+  "description": "A Statamic Addon to save Video How To's for your customers",
   "keywords": [
     "Statamic",
+    "V3",
     "Addon",
     "How-To", "HowTo", "How", "To",
     "Videos"
@@ -24,7 +25,7 @@
   },
   "require": {
     "php": "^7.2",
-    "illuminate/support": "6.* || 7.*",
+    "illuminate/support": "7.*",
     "statamic/cms": "3.*@beta"
   },
   "extra": {
