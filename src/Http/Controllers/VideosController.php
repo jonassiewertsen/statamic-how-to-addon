@@ -2,12 +2,13 @@
 
 namespace Jonassiewertsen\Statamic\HowTo\Http\Controllers;
 
+use Jonassiewertsen\Statamic\HowTo\Helper\Video;
 use Statamic\Facades\Entry;
 
 class VideosController {
     public function index()
     {
-        $videos = Entry::whereCollection('how_to_addon_videos');
+        $videos = Entry::whereCollection(Video::collectionName());
 
         $videos = $this->sortByTitle($videos);
 
@@ -16,7 +17,7 @@ class VideosController {
 
     public function show($slug)
     {
-        $video = Entry::findBySlug($slug, config('howToAddon.blueprint.videos', 'how_to_addon_videos'));
+        $video = Entry::findBySlug($slug, Video::collectionName());
 
         // TODO: Should be replaced by Asset::findByPath later.
         // https://github.com/statamic/cms/issues/1155

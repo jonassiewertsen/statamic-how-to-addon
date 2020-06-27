@@ -2,6 +2,7 @@
 
 namespace Jonassiewertsen\Statamic\HowTo\Widgets;
 
+use Jonassiewertsen\Statamic\HowTo\Helper\Video;
 use Statamic\Facades\Entry;
 use Statamic\Widgets\Widget;
 
@@ -14,7 +15,7 @@ class HowToVideos extends Widget
      */
     public function html()
     {
-        $videos = Entry::whereCollection('how_to_addon_videos');
+        $videos = Entry::whereCollection(Video::collectionName());
 
         return view('howToAddon::widgets.howToVideos', compact('videos'));
     }

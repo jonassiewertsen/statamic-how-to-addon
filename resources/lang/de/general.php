@@ -11,9 +11,10 @@ return [
     |
     */
 
-    'back' => 'zurück',
-    'footer' => [
-        'createdBy' => 'Addon erstellt von',
-    ]
+    'back'   => 'zurück',
+    'title'  => 'Videos',
+    'intro'  => 'Mit diesen Videos kannst Du schnell und gut durchstarten.',
+    'manage' => 'Verwalten',
+    'empty'  => 'Es wurden noch keine Videos hinzugefügt.',
 
 ];

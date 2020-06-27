@@ -8,8 +8,8 @@
     <div class="flex flex-wrap card">
 
         <div class="p-3 -mt-1 w-full">
-            <h1>{{ __('howToAddon::videos.title') }}</h1>
-            <p class="text-grey-80">{{ __('howToAddon::videos.intro') }}</p>
+            <h1>{{ __('howToAddon::general.title') }}</h1>
+            <p class="text-grey-80">{{ __('howToAddon::general.intro') }}</p>
         </div>
 
         @forelse ($videos as $video)
@@ -38,7 +38,7 @@
                 </svg>
             </div>
 
-            <p class="text-grey-80 mt-2">{{ __('howToAddon::videos.empty') }}</p>
+            <p class="text-grey-80 mt-2">{{ __('howToAddon::general.empty') }}</p>
         @endforelse
 
 

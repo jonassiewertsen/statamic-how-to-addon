@@ -2,7 +2,7 @@
 
     <div class="p-3 -mt-1 w-full">
         <h1>How To</h1>
-        <p class="text-grey-80">{{ __('howToAddon::videos.intro') }}</p>
+        <p class="text-grey-80">{{ __('howToAddon::general.intro') }}</p>
     </div>
 
     @forelse ($videos as $video)
@@ -31,7 +31,7 @@
             </svg>
         </div>
 
-        <p class="text-grey-80 mt-2">{{ __('howToAddon::videos.empty') }}</p>
+        <p class="text-grey-80 mt-2">{{ __('howToAddon::general.empty') }}</p>
     @endforelse
 
 

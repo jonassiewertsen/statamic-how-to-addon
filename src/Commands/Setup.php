@@ -23,7 +23,7 @@ class Setup extends Command
      *
      * @var string
      */
-    protected $description = 'Setup Collections and stuff for the "How To Addon"';
+    protected $description = 'Setting up the collection and blueprint for the "How To Addon"';
 
     /**
      * Create a new command instance.
@@ -42,26 +42,20 @@ class Setup extends Command
      */
     public function handle()
     {
-        $this->createCollections();
-        $this->createBlueprints();
+        $this->createCollection();
+        $this->createBlueprint();
 
         $this->info('Everything has been setup for you. Cheers!');
     }
 
-    private function createCollections() {
+    private function createCollection() {
         Collection::make(Video::collectionName())
             ->entryBlueprints(Video::collectionName())
             ->title('How to videos')
             ->save();
-
-        Collection::make(Documentation::collectionName())
-            ->entryBlueprints(Documentation::collectionName())
-            ->title('How to documentation')
-            ->structure((new CollectionStructure)->maxDepth(2))
-            ->save();
     }
 
-    protected function createBlueprints()
+    protected function createBlueprint()
     {
         (new Blueprint)
             ->setHandle(Video::collectionName())
@@ -96,41 +90,5 @@ class Setup extends Command
                     ],
                 ]
             ])->save();
-
-        (new Blueprint)
-            ->setHandle(Documentation::collectionName())
-            ->setContents([
-                'title' => 'How to documentation',
-                'sections' => [
-                    'main' => [
-                        'fields' => [
-                            ['handle' => 'content', 'field' =>[
-                                'restrict'              => false,
-                                'automatic_line_breaks' => true,
-                                'automatic_links'       => false,
-                                'escape_markup'         => false,
-                                'smartypants'           => false,
-                                'type'                  => 'markdown',
-                                'localizable'           => false,
-                                'listable'              => 'hidden',
-                                'display'               => 'Content',
-                                'validate'              => 'required',
-                            ]]
-                        ]
-                    ],
-                    'sidebar' => [
-                        'fields' => [
-                            ['handle' => 'slug', 'field' => [
-                                'type'          => 'slug',
-                                'localizable'   => false,
-                                'listable'      => 'hidden',
-                                'display'       => 'Slug',
-                                'validate'      => 'required',
-                            ]],
-                        ],
-                    ],
-                ]
-            ])->save();
-
     }
 }

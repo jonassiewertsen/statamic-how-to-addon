@@ -11,9 +11,10 @@ return [
     |
     */
 
-    'back' => 'back',
-    'footer' => [
-        'createdBy' => 'Addon created by',
-    ]
+    'back'   => 'back',
+    'empty'  => 'No videos added jet.',
+    'intro'  => 'Check out our videos, to get you started as good as possible.',
+    'manage' => 'Manage',
+    'title'  => 'Videos',
 
 ];
