@@ -2,7 +2,14 @@
 
 Would you like to use less time to explain how your specific Statamic site has been built? "How To" is your Statamic Addon then!
 
-NEW: You can add a widget from your screencasts to the dasboard.
+## installation
+Install it via composer. 
+
+```bash
+composer require jonassiewertsen/statamic-how-to-addon
+```
+
+Everything else will be set up automatically. 
 
 ## How does it work?
 
@@ -24,9 +31,9 @@ Would you like something more flexible and with more functionality? Check out my
 [Documentation Plugin](https://statamic.com/marketplace/addons/documentation)
 
 # Requirements
-- Statamic V3
-- Laravel 7
-- min. PHP 7.2
+- Statamic 3.2 or 3.1
+- Laravel 8 or 7
+- PHP 8.0 or >= PHP 7.3
 
 ### License
 This Addon is paid and commerical software. A license from the Statamic Marketplace is needed in order to use it in production.
