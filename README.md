@@ -3,13 +3,7 @@
 Would you like to use less time to explain how your specific Statamic site has been built? "How To" is your Statamic Addon then!
 
 ## installation
-Install it via composer. 
-
-```bash
-composer require jonassiewertsen/statamic-how-to-addon
-```
-
-Everything else will be set up automatically. 
+Check out the documentation on the Statamic marketplace.
 
 ## How does it work?
 
