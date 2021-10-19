@@ -8,6 +8,7 @@ use Jonassiewertsen\Statamic\HowTo\Helper\Video;
 use Statamic\Facades\Collection;
 use Statamic\Facades\CP\Nav;
 use Statamic\Providers\AddonServiceProvider;
+use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
@@ -42,6 +43,7 @@ class ServiceProvider extends AddonServiceProvider
         }
 
         $this->createNavigation();
+        $this->install();
     }
 
     private function createNavigation(): void
@@ -64,14 +66,15 @@ class ServiceProvider extends AddonServiceProvider
         });
     }
 
-    private function loadCommands(array $commands) {
-        if ($this->app->runningInConsole()) {
-            $this->commands($commands);
-        }
-    }
-
     private function videoCollectionName()
     {
         return config('howToAddon.collection.videos', 'how_to_addon_videos');
+    }
+
+    private function install()
+    {
+        Statamic::afterInstalled(function ($command) {
+            $command->call('howToAddon:setup');
+        });
     }
 }

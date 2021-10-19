@@ -3,11 +3,9 @@
 namespace Jonassiewertsen\Statamic\HowTo\Commands;
 
 use Illuminate\Console\Command;
-use Jonassiewertsen\Statamic\HowTo\Helper\Documentation;
 use Jonassiewertsen\Statamic\HowTo\Helper\Video;
+use Statamic\Facades\Blueprint;
 use Statamic\Facades\Collection;
-use Statamic\Fields\Blueprint;
-use Statamic\Structures\CollectionStructure;
 
 class Setup extends Command
 {
@@ -26,16 +24,6 @@ class Setup extends Command
     protected $description = 'Setting up the collection and blueprint for the "How To Addon"';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -49,16 +37,24 @@ class Setup extends Command
     }
 
     private function createCollection() {
+        if (Collection::handleExists(Video::collectionName())) {
+            return; // Don't create in case the collection already exists.
+        }
+
         Collection::make(Video::collectionName())
-            ->entryBlueprints(Video::collectionName())
             ->title('How to videos')
             ->save();
     }
 
     protected function createBlueprint()
     {
-        (new Blueprint)
+        if (Blueprint::find(Video::collectionName())) {
+            return; // Don't create in case the blueprint already exists.
+        }
+
+        (new \Statamic\Fields\Blueprint)
             ->setHandle(Video::collectionName())
+            ->setNamespace('collections.'.Video::collectionName())
             ->setContents([
                 'title' => 'How to Video',
                 'sections' => [
