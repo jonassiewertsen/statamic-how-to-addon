@@ -21,12 +21,8 @@ composer require jonassiewertsen/statamic-how-to-addon
 
 ## Step 2
 
-To setup up a Collection and Blueprints, fire the setup command.
-If you do want to use your own collection and blueprint names, change those in the config file first :-)
-
-```
-php artisan howToAddon:setup
-```
+To setup up a Collection and Blueprints, please do nothing.
+They will be set up for you automatically.
 
 ## Step 3
 Permissions need to be set, to upload or change videos. 
