@@ -25,8 +25,8 @@
   },
   "require": {
     "php": "^7.3 || ^8.0",
-    "illuminate/support": "8.* | 7.*",
-    "statamic/cms": "3.2.* | 3.1.*"
+    "illuminate/support": "10.* | 9.* | 8.* | 7.*",
+    "statamic/cms": "3.4.* | 3.3.* | 3.2.* | 3.1.*"
   },
   "extra": {
     "statamic": {
