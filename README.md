@@ -25,8 +25,8 @@ Would you like something more flexible and with more functionality? Check out my
 [Documentation Plugin](https://statamic.com/marketplace/addons/documentation)
 
 # Requirements
-- Statamic 3.4, 3.3, 3.2 or 3.1
-- Laravel 10, 9, 8 or 7
+- Statamic 3 or 4
+- Laravel 10, 9
 - PHP 8.0 or >= PHP 7.3
 
 ### License
